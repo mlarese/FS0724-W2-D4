@@ -2,22 +2,71 @@ In Java, i metodi `Comparator.comparingInt`, `Comparator.comparing` e l'operazio
 
 1. Comparator.comparingInt: Crea un comparatore che confronta oggetti basandosi su un valore intero derivato da loro.
    - Esempio: Ordinare una lista di persone in base all'età.
-     
+
      Comparator<Persona> perEta = Comparator.comparingInt(Persona::getEta);
-     
+
 
 2. Comparator.comparing: Crea un comparatore basato su una funzione che estrae una chiave di comparazione.
    - Esempio: Ordinare persone per nome.
-     
+
      Comparator<Persona> perNome = Comparator.comparing(Persona::getNome);
-     
+
 
 3. users.stream().sorted: Ordina gli elementi di uno stream. Puoi passare un comparatore per definire l'ordine.
    - Esempio: Ordinare una lista di utenti per nome usando uno stream.
-     
+
      List<Utente> utentiOrdinati = utenti.stream()
                                          .sorted(Comparator.comparing(Utente::getNome))
                                          .collect(Collectors.toList());
-     
+
 
 Questi strumenti sono essenziali per ordinare collezioni in Java in modo efficiente e leggibile.
+
+import java.util.*;
+
+class Studente {
+    private String nome;
+    private int punteggioEsame;
+
+    public Studente(String nome, int punteggioEsame) {
+        this.nome = nome;
+        this.punteggioEsame = punteggioEsame;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getPunteggioEsame() {
+        return punteggioEsame;
+    }
+
+    @Override
+    public String toString() {
+        return nome + " (" + punteggioEsame + ")";
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        List<Studente> studenti = Arrays.asList(
+            new Studente("Alice", 85),
+            new Studente("Bob", 92),
+            new Studente("Charlie", 85),
+            new Studente("David", 95)
+        );
+
+        // Comparatore per punteggio e, a parità, per nome
+        Comparator<Studente> comparatore = Comparator
+            .comparingInt(Studente::getPunteggioEsame)
+            .thenComparing(Studente::getNome);
+
+        // Ordinamento
+        List<Studente> studentiOrdinati = studenti.stream()
+            .sorted(comparatore)
+            .toList();
+
+        // Stampa
+        studentiOrdinati.forEach(System.out::println);
+    }
+}

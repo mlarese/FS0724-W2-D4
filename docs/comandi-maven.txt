@@ -1,0 +1,29 @@
+Lista dei comandi principali di Maven, che sono usati frequentemente durante lo sviluppo e la gestione di progetti Java:
+
+1. mvn clean: Rimuove i file generati nella cartella `target`.
+
+2. mvn compile: Compila il codice sorgente del progetto.
+
+3. mvn test: Esegue i test utilizzando un framework di test, come JUnit o TestNG.
+
+4. mvn package: Compila il codice sorgente e lo imballa in un formato distribuibile, come un JAR o WAR.
+
+5. mvn install: Installa il pacchetto nel repository locale di Maven, il che lo rende disponibile per altri progetti come dipendenza.
+
+6. mvn deploy: Carica il pacchetto costruito in un repository remoto per condividerlo con altri sviluppatori e progetti.
+
+7. mvn site: Genera un sito per il progetto che include documentazione generata automaticamente come Javadoc.
+
+8. mvn clean install: Una combinazione comune che prima pulisce il progetto (rimuove la cartella `target`) e poi esegue l'installazione.
+
+9. mvn validate: Valida che il progetto sia corretto e che tutte le informazioni necessarie siano disponibili.
+
+10. mvn verify: Esegue qualsiasi controllo per verificare l'integrità e la qualità del pacchetto dopo l'integrazione nel sistema.
+
+11. mvn dependency:tree: Fornisce un elenco delle dipendenze del progetto, visualizzando l'albero delle dipendenze.
+
+12. mvn archetype:generate: Genera una nuova struttura di progetto basata su un archetipo (template) di progetto.
+
+13. mvn help:effective-pom: Visualizza il POM effettivo del progetto, con l'ereditarietà e la gestione delle dipendenze risolte.
+
+Questi comandi rappresentano alcune delle operazioni più comuni che puoi eseguire con Maven. Ogni comando può avere ulteriori opzioni e parametri per personalizzare il suo comportamento a seconda delle esigenze del progetto.

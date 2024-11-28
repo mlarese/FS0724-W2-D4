@@ -1,0 +1,21 @@
+L'installazione di Maven su un PC, generalmente basato su Windows, richiede alcuni passaggi fondamentali. Ecco una guida passo-passo:
+
+1. Scarica Java: Maven richiede Java per funzionare. Assicurati di avere installato Java Development Kit (JDK) sul tuo sistema. Puoi scaricarlo dal sito ufficiale di Oracle o di altri fornitori di JDK.
+
+2. Verifica la versione di Java: Una volta installato Java, apri il prompt dei comandi (cmd) e digita `java -version` per assicurarti che la versione corretta di Java sia installata.
+
+3. Scarica Maven: Vai sul sito ufficiale di Maven (https://maven.apache.org/download.cgi) e scarica l'ultima versione di Maven. Si tratta di un file zip.
+
+4. Estrai il File Zip: Estrai il file zip di Maven in una cartella sul tuo PC. Puoi scegliere qualsiasi posizione, ma è consigliabile scegliere un percorso senza spazi, come `C:\Maven` per evitare problemi.
+
+5. Imposta le Variabili d'Ambiente:
+   - Apri il Pannello di Controllo, vai su Sistema e Sicurezza > Sistema > Impostazioni di sistema avanzate > Variabili d'ambiente.
+   - Nelle variabili di sistema, cerca la variabile `Path` e seleziona "Modifica".
+   - Aggiungi il percorso della cartella `bin` di Maven. Ad esempio, se hai estratto Maven in `C:\Maven`, aggiungi `C:\Maven\apache-maven-<versione>\bin` al percorso.
+   - Crea una nuova variabile di sistema chiamata `JAVA_HOME` e imposta il percorso della cartella principale di JDK come suo valore.
+
+6. Verifica l'Installazione: Apri nuovamente il prompt dei comandi e digita `mvn -version` per verificare che Maven sia stato installato correttamente. Dovresti vedere informazioni sulla versione di Maven e sul JDK installato.
+
+7. Configura il File `settings.xml` (opzionale): Per configurazioni avanzate, come la configurazione di repository privati o impostazioni specifiche dell'ambiente, puoi modificare il file `settings.xml` nella cartella `conf` di Maven.
+
+Una volta completati questi passaggi, Maven dovrebbe essere installato correttamente sul tuo PC e pronto per essere utilizzato.

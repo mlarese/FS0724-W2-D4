@@ -1,0 +1,39 @@
+`IntSummaryStatistics` è una classe in Java che viene utilizzata per raccogliere statistiche come conteggio, somma, minimo, massimo e media di valori interi. Questa classe è spesso utilizzata in combinazione con i flussi (streams) in Java 8 e versioni successive. È particolarmente utile quando si desidera calcolare più statistiche in una singola passata sui dati.
+
+Ecco alcune delle principali funzioni di `IntSummaryStatistics`:
+
+1. getCount(): Restituisce il conteggio degli elementi.
+2. getSum(): Restituisce la somma degli elementi.
+3. getMin(): Restituisce il valore minimo.
+4. getMax(): Restituisce il valore massimo.
+5. getAverage(): Restituisce la media degli elementi.
+
+Esempio di Utilizzo
+
+Supponiamo di avere una lista di numeri interi e vogliamo calcolare le statistiche su questi numeri:
+
+
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
+import java.util.List;
+
+public class IntSummaryStatisticsExample {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+        IntSummaryStatistics stats = numbers.stream()
+                                            .mapToInt(Integer::intValue)
+                                            .summaryStatistics();
+
+        System.out.println("Count: " + stats.getCount());
+        System.out.println("Sum: " + stats.getSum());
+        System.out.println("Min: " + stats.getMin());
+        System.out.println("Max: " + stats.getMax());
+        System.out.println("Average: " + stats.getAverage());
+    }
+}
+
+
+In questo esempio, viene creato uno `stream` di numeri interi dalla lista `numbers`. Il metodo `mapToInt` converte gli `Integer` in valori `int` primitivi. Poi, `summaryStatistics()` viene utilizzato per raccogliere le statistiche su questi numeri. Infine, vengono stampati il conteggio, la somma, il valore minimo, il valore massimo e la media.
+
+`IntSummaryStatistics` è molto utile per ottenere un riassunto rapido e preciso di un insieme di valori interi senza la necessità di calcolare separatamente ogni statistica.

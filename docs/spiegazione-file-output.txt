@@ -1,0 +1,3 @@
+Il metodo FileUtils.writeStringToFile() della libreria Apache Commons IO, che stai utilizzando nel tuo codice, creerà automaticamente il file se non esiste. Questo metodo scrive una stringa nel file specificato, e la modalità true per il parametro append indica che il contenuto sarà aggiunto al file senza sovrascrivere il contenuto esistente. Se il file non esiste, sarà creato.
+
+Quindi, quando esegui il codice, se il file output.txt non esiste, verrà creato e il testo "NUOVO CONTENUTO" verrà scritto al suo interno. Se il file esiste già, "NUOVO CONTENUTO" verrà aggiunto al termine del contenuto esistente nel file.

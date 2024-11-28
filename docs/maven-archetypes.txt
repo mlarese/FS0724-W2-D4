@@ -1,0 +1,10 @@
+Tra i Maven Archetypes più comunemente utilizzati ci sono:
+
+    maven-archetype-quickstart: Per generare un progetto Maven di base.
+    maven-archetype-webapp: Per creare un progetto webapp Maven.
+    maven-archetype-simple: Utilizzato per generare un progetto Maven semplice.
+    maven-archetype-plugin: Per sviluppare un plugin Maven.
+    maven-archetype-j2ee-simple: Per creare un'applicazione J2EE semplificata.
+    maven-archetype-site: Per generare un sito Maven che mostra vari tipi di documenti supportati.
+
+Questi archetipi offrono una varietà di modelli per diversi tipi di progetti Maven, semplificando notevolmente il processo di configurazione iniziale. Puoi trovare ulteriori dettagli e una lista completa di archetipi disponibili nella documentazione ufficiale di Maven.

@@ -1,0 +1,23 @@
+In Java, i metodi `Comparator.comparingInt`, `Comparator.comparing` e l'operazione `sorted` su uno stream sono usati per ordinare collezioni di oggetti:
+
+1. Comparator.comparingInt: Crea un comparatore che confronta oggetti basandosi su un valore intero derivato da loro.
+   - Esempio: Ordinare una lista di persone in base all'età.
+     
+     Comparator<Persona> perEta = Comparator.comparingInt(Persona::getEta);
+     
+
+2. Comparator.comparing: Crea un comparatore basato su una funzione che estrae una chiave di comparazione.
+   - Esempio: Ordinare persone per nome.
+     
+     Comparator<Persona> perNome = Comparator.comparing(Persona::getNome);
+     
+
+3. users.stream().sorted: Ordina gli elementi di uno stream. Puoi passare un comparatore per definire l'ordine.
+   - Esempio: Ordinare una lista di utenti per nome usando uno stream.
+     
+     List<Utente> utentiOrdinati = utenti.stream()
+                                         .sorted(Comparator.comparing(Utente::getNome))
+                                         .collect(Collectors.toList());
+     
+
+Questi strumenti sono essenziali per ordinare collezioni in Java in modo efficiente e leggibile.

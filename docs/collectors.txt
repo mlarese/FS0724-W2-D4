@@ -1,0 +1,32 @@
+In Java, i metodi `Collectors.groupingBy`, `Collectors.joining`, `Collectors.averagingInt`, e `Collectors.summarizingInt` sono utilizzati frequentemente con le stream per aggregare e trasformare i dati. Ecco una breve descrizione e degli esempi pratici per ciascuno:
+
+1. Collectors.groupingBy: Raggruppa gli elementi dello stream in base a un criterio specificato, restituendo una mappa.
+   - Esempio: Raggruppare una lista di oggetti `Persona` in base all'età.
+     
+     Map<Integer, List<Persona>> gruppiPerEta = persone.stream()
+                                                       .collect(Collectors.groupingBy(Persona::getEta));
+     
+
+2. Collectors.joining: Concatena gli elementi di uno stream in una singola stringa, con opzionali delimitatori, prefisso e suffisso.
+   - Esempio: Unire i nomi in una lista con una virgola.
+     
+     String nomiConcatenati = persone.stream()
+                                     .map(Persona::getNome)
+                                     .collect(Collectors.joining(", "));
+     
+
+3. Collectors.averagingInt: Calcola la media di un valore `int` estratto dagli elementi dello stream.
+   - Esempio: Calcolare l'età media di una lista di persone.
+     
+     double etaMedia = persone.stream()
+                              .collect(Collectors.averagingInt(Persona::getEta));
+     
+
+4. Collectors.summarizingInt: Fornisce statistiche (conta, somma, min, max, media) per un valore `int` estratto dagli elementi dello stream.
+   - Esempio: Ottenere statistiche sull'età in una lista di persone.
+     
+     IntSummaryStatistics statisticheEta = persone.stream()
+                                                  .collect(Collectors.summarizingInt(Persona::getEta));
+     
+
+Questi metodi sono molto utili per elaborare collezioni di dati in modo funzionale e dichiarativo in Java.

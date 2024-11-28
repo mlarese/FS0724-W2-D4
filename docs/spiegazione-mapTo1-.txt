@@ -1,0 +1,13 @@
+calcola la media delle età degli utenti in una lista users in Java, utilizzando le stream:
+
+    users.stream(): Trasforma la lista users in uno stream per il processamento successivo.
+
+    mapToInt(User::getAge): Converte ogni utente nello stream in un valore int, che è la loro età, utilizzando il metodo getAge.
+
+    average(): Calcola la media di tutti i valori int (età) nello stream. Questo metodo restituisce un OptionalDouble perché potrebbe non esserci nessun elemento nello stream, e quindi nessuna media da calcolare.
+
+    getAsDouble(): Estrae il valore dalla OptionalDouble restituita da average(). Se l'OptionalDouble è vuoto (ad esempio, se non ci sono elementi nello stream), questo metodo lancerà un'eccezione. Assicurati che ci siano elementi nello stream prima di chiamare questo metodo.
+
+    System.out.println("Media: " + average2): Stampa la media calcolata.
+
+In breve, il codice calcola e stampa la media delle età degli utenti nella lista users.

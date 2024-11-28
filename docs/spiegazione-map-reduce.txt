@@ -1,0 +1,11 @@
+calcola l'età totale di un gruppo di utenti in una lista users in Java utilizzando le stream:
+
+    users.stream(): Converte la lista users in uno stream. Un stream in Java è una sequenza di oggetti che supporta varie operazioni di manipolazione dei dati.
+
+    map(User::getAge): Trasforma (o "mappa") ogni utente dello stream nella sua età. Il metodo getAge viene chiamato su ogni oggetto User dello stream.
+
+    reduce(0, (partialSum, currentElem) -> partialSum + currentElem): Questa è un'operazione di riduzione che aggrega tutti gli elementi dello stream in un singolo risultato. Inizia con un valore iniziale di 0 (somma parziale iniziale) e applica ripetutamente la lambda fornita a ogni elemento dello stream. La lambda prende la somma parziale corrente (partialSum) e l'elemento corrente (currentElem), sommandoli insieme. Questo calcola la somma totale delle età.
+
+    System.out.println("Totale 1: " + totalAges): Stampa il risultato finale, cioè la somma totale delle età.
+
+In sostanza, il codice calcola la somma di tutte le età degli utenti nella lista users.
